@@ -1,0 +1,155 @@
+/* Estilos generales para todos los elementos HTML */
+* {
+    transition: all 0.3s ease; /* Aplica una transición suave a todos los cambios de propiedad */
+    font-family: "Staatliches", sans-serif; /* Establece la fuente predeterminada para todos los elementos */
+    font-weight: 400; /* Peso de la fuente normal para un aspecto uniforme */
+    font-style: normal; /* Estilo de fuente normal, sin cursivas */
+}
+
+/* Estilos específicos para el cuerpo del documento */
+body {
+    background: linear-gradient(to right, #11bfcb, #ff1ea1); /* Fondo con gradiente que va de turquesa a rosa */
+    color: #fff; /* Color del texto establecido en blanco para contraste */
+    display: flex; /* Usa Flexbox para el diseño centrado */
+    justify-content: center; /* Centra los elementos horizontalmente en el contenedor */
+    align-items: center; /* Centra los elementos verticalmente en el contenedor */
+    height: 100vh; /* Ajusta la altura del cuerpo a la altura del viewport */
+    margin: 0; /* Elimina el margen exterior por defecto */
+    padding: 0; /* Elimina el relleno interior por defecto */
+}
+
+/* Estilos para el contenedor principal que alberga todos los elementos del juego */
+.container {
+    text-align: center; /* Alinea el texto al centro del contenedor */
+    padding: 40px; /* Espacio interno alrededor de los contenidos del contenedor */
+    border-radius: 20px; /* Bordes redondeados para suavizar los bordes del contenedor */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad visual */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente blanco para legibilidad */
+    width: 95%; /* Ancho del contenedor como porcentaje del ancho disponible */
+    max-width: 600px; /* Máximo ancho del contenedor para evitar que sea demasiado grande */
+    animation: fadeIn 1s ease-out; /* Animación para el efecto de aparición gradual */
+}
+
+/* Define la animación de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); } /* Inicia desde transparente y desplazado hacia abajo */
+    to { opacity: 1; transform: translateY(0); } /* Termina completamente visible y en su posición final */
+}
+
+/* Estilos para los encabezados dentro del contenedor */
+h1 {
+    font-size: 2.5rem; /* Tamaño de fuente grande para los encabezados */
+    color: #000000; /* Color del texto negro para alta legibilidad */
+}
+
+/* Estilos para los botones dentro del contenedor */
+button {
+    cursor: pointer; /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    padding: 15px 30px; /* Relleno alrededor del texto dentro del botón */
+    border: none; /* Sin bordes para un diseño más limpio */
+    border-radius: 10px; /* Bordes redondeados para los botones */
+    background-color: #007bff; /* Color de fondo azul por defecto para los botones */
+    color: white; /* Texto de color blanco para contraste */
+    margin-top: 20px; /* Margen superior para separar el botón de elementos anteriores */
+    font-size: 1.2rem; /* Tamaño de fuente para los textos dentro de los botones */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones para efectos visuales al interactuar */
+}
+
+/* Estilos para los botones al pasar el mouse */
+button:hover {
+    background-color: #0056b3; /* Oscurece el color de fondo al pasar el mouse */
+    transform: translateY(-5px); /* Levanta ligeramente el botón */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Añade una sombra más pronunciada al pasar el mouse */
+}
+
+/* Estilos para los botones cuando están deshabilitados */
+button:disabled, button:disabled:hover {
+    background-color: #ccc; /* Color de fondo gris para indicar que el botón está deshabilitado */
+    color: #666; /* Color de texto gris oscuro para mejorar la legibilidad */
+    cursor: default; /* El cursor por defecto para indicar que el botón no es interactivo */
+    transform: none; /* No aplica transformación alguna */
+    box-shadow: none; /* Elimina la sombra */
+}
+
+/* Estilos para los campos de entrada de tipo número */
+input[type="number"] {
+    padding: 15px; /* Relleno dentro del campo de entrada */
+    width: calc(100% - 30px); /* Ancho ajustado al 100% del contenedor padre menos el relleno */
+    margin-top: 20px; /* Margen superior para separarlo de elementos anteriores */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    font-size: 1.2rem; /* Tamaño de fuente grande para fácil lectura */
+    animation: shadowPulse 3s infinite; /* Animación de pulsación de sombra */
+}
+
+/* Define la animación de pulsación de sombra para campos de entrada */
+@keyframes shadowPulse {
+    0%, 100% { box-shadow: 0 0 0px rgba(0,123,255,0.5); }
+    50% { box-shadow: 0 0 20px rgba(0,123,255,0.8); }
+}
+
+/* Estilos para el párrafo que muestra el número de intentos */
+#intentos {
+    margin-top: 30px; /* Margen superior para separación visual */
+    color: #333; /* Color de texto gris oscuro para visibilidad */
+    font-weight: bold; /* Fuente en negrita para destacar */
+    font-size: 1.5rem; /* Tamaño de fuente grande para fácil lectura */
+    transition: transform 0.3s ease-in-out, color 0.5s linear; /* Transiciones para transformación y cambio de color */
+}
+
+/* Efecto al pasar el mouse sobre el párrafo de intentos */
+#intentos:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del texto */
+    color: #007bff; /* Cambia el color del texto a azul */
+}
+
+/* Media queries para ajustar los estilos en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Reduce el relleno interior en pantallas pequeñas */
+        max-width: 95%; /* Ajusta el ancho máximo en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 2rem; /* Reduce el tamaño de los encabezados */
+    }
+
+    button {
+        padding: 10px 20px; /* Reduce el relleno de los botones */
+        font-size: 1rem; /* Reduce el tamaño de fuente de los botones */
+    }
+
+    input[type="number"] {
+        padding: 10px; /* Reduce el relleno del campo de entrada */
+        font-size: 1rem; /* Reduce el tamaño de fuente del campo de entrada */
+    }
+
+    #intentos {
+        font-size: 1.2rem; /* Reduce el tamaño de fuente del párrafo de intentos */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Reduce aún más el relleno interior en pantallas muy pequeñas */
+        max-width: 90%; /* Ajusta aún más el ancho máximo en pantallas muy pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduce aún más el tamaño de los encabezados */
+    }
+
+    button {
+        padding: 8px 16px; /* Reduce aún más el relleno de los botones */
+        font-size: 0.9rem; /* Reduce aún más el tamaño de fuente de los botones */
+    }
+
+    input[type="number"] {
+        padding: 8px; /* Reduce aún más el relleno del campo de entrada */
+        font-size: 0.9rem; /* Reduce aún más el tamaño de fuente del campo de entrada */
+    }
+
+    #intentos {
+        font-size: 1rem; /* Reduce aún más el tamaño de fuente del párrafo de intentos */
+    }
+}

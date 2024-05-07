@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Establece que el documento es HTML5 -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Establece la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura la vista para dispositivos móviles con una escala inicial -->
+    <title>Adivina el Número</title>
+    <!-- Título de la página -->
+    <link rel="stylesheet" href="style_game.css">
+    <!-- Vincula el archivo de estilos CSS -->
+    <link rel="icon" href="img/icon.webp">
+    <!-- Icono de la página -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconecta con Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Permite el uso de fuentes de Google Fonts con CORS -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <!-- Importa la fuente 'Staatliches' desde Google Fonts -->
+</head>
+<body>   
+    <div class="container">
+        <!-- Contenedor principal para el contenido central -->
+        <h1>Intenta adivinar el número correcto!</h1>
+        <!-- Título principal de la página -->
+        <h1>Dificultades:</h1>
+        <!-- Título para las opciones de dificultad -->
+        <div id="dificultad">
+            <!-- Contenedor para los botones de dificultad -->
+            <button id="facil">Fácil</button>
+            <!-- Botón para seleccionar la dificultad fácil -->
+            <button id="medio">Medio</button>
+            <!-- Botón para seleccionar la dificultad media -->
+            <button id="dificil">Muy difícil</button>
+            <!-- Botón para seleccionar la dificultad muy difícil -->
+        </div>
+        <button id="iniciar">Iniciar juego</button>
+        <!-- Botón para iniciar el juego -->
+        <input type="number" id="numero" min="1" max="200" disabled>
+        <!-- Campo de entrada para ingresar el número a adivinar -->
+        <button id="pensar" disabled>Pensar</button>
+        <!-- Botón para confirmar el número pensado (deshabilitado inicialmente) -->
+        <button id="intentar" disabled>Intentar</button>
+        <!-- Botón para intentar adivinar el número (deshabilitado inicialmente) -->
+        <p id="intentos"></p>
+        <!-- Párrafo para mostrar el número de intentos -->
+        <button id="reiniciar" disabled>Reiniciar Juego</button>
+        <!-- Botón para reiniciar el juego (deshabilitado inicialmente) -->
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Vincula el archivo JavaScript que contiene la lógica del juego -->
+</body>
+<!-- Esta etiqueta cierra el <body>, que es donde termina el contenido visible de la página. -->
+</html>
+<!-- Esta etiqueta cierra el documento HTML. -->
